@@ -1,0 +1,14 @@
+# Force Python files to be counted as Python
+*.py linguist-language=Python
+
+# Force JavaScript files to be counted as JavaScript
+*.js linguist-language=JavaScript
+
+# Force HTML files to be counted as HTML
+*.html linguist-language=HTML
+
+# Optional: mark files to be ignored in language stats
+*.css linguist-vendored
+*.json linguist-vendored
+*.md linguist-vendored
+*.txt linguist-vendored
