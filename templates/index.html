@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Location Data Extractor</title>
+    
+    <!-- Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <!-- Leaflet Draw CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Business Location Data Extractor</h1>
+            <p>Find and export business data from specific geographical areas</p>
+        </header>
+        
+        <main>
+            <div class="search-panel">
+                <div class="area-search">
+                    <h2>1. Find Location</h2>
+                    <div class="input-group">
+                        <input type="text" id="area-input" placeholder="Enter area name (e.g., Nakuru, Langalanga)">
+                        <button id="area-search-btn">Search</button>
+                    </div>
+                    <p class="instruction">Or click anywhere on the map to identify location</p>
+                </div>
+                
+                <div class="drawing-tools">
+                    <h2>2. Select Region</h2>
+                    <p class="instruction">Use the boundary from your search or draw a custom shape on the map</p>
+                    <div class="buttons">
+                        <button id="clear-btn">Clear</button>
+                    </div>
+                    <p class="hint">Click on the square or polygon icon on the map to draw a custom shape</p>
+                </div>
+                
+                <div class="search-options">
+                    <h2>3. Search for Businesses</h2>
+                    <div class="input-group">
+                        <select id="category-select">
+                            <option value="amenity">Amenity</option>
+                            <option value="shop">Shop</option>
+                            <option value="tourism">Tourism</option>
+                            <option value="leisure">Leisure</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="office">Office</option>
+                        </select>
+                        <select id="value-select">
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                        <button id="search-btn" disabled>Search</button>
+                    </div>
+                </div>
+                
+                <div class="results">
+                    <h2>4. Results</h2>
+                    <div id="results-list"></div>
+                    <button id="export-btn" style="display: none;">Export to CSV</button>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <div id="map"></div>
+                <div id="loading-spinner" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </main>
+        
+        <div id="notification" class="notification" style="display: none;"></div>
+    </div>
+    
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
