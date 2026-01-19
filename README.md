@@ -178,8 +178,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
- faustinemarucha@gmail.com
-
+- Email: faustinemarucha@gmail.com
+- LinkedIn: [Faustine Marucha](www.linkedin.com/in/faustine-marucha-184077348)
 Project Link: [https://github.com/Faustine254/business-location-extractor](https://github.com/yourusername/business-location-extractor)
 
 ## 🔮 Future Enhancements
